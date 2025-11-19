@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>settings page</title>
+
+        <!--this is the fonts-->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+
+        <!--style sheet-->
+        <link rel="stylesheet" href="/src/styles/settings.css" />
+
+        <!--firebase js-->
+        
+
+        <!--profile upload JS-->
+        <script type="module" src="/src/js/profile.js"></script>
+
+        <!--credentials upload js-->
+        <script type="module" src="/src/js/settings.js"></script>
+
+        <!--the js module-->
+        <script type="module" src="/src/components/components.js"></script>
+    </head>
+    <body>
+        <!--imported navbar-->
+        <app-navbar></app-navbar>
+
+        <!--profile banner-->
+        <div class="pfp-banner">
+            <!--pfp picture-->
+            <div class="pfp-pic">
+                <div class="show-cred-container">
+                <h1>Current user info</h1>
+                <p>name placeholder</p>
+                <p>lastname placeholder</p>
+                <p>username placeholder</p>
+                <div id="creds-go-here" class="creds">
+                </div>
+            </div>
+                <img id="pfp-image" src="/src/assets/images/pfp-paceholder.jpg" alt="place holder for pfp">
+            </div>
+            <!--reset button under the picture-->
+            <button id="reset-pfp">Reset Picture</button>
+            <input type="file" id="upload-pfp" accept="image/*" style="display: none;">
+        </div>
+        <br>
+        <!--form-->
+        <form id="myForm">
+            <!--account options banner-->
+            <fieldset class="fieldset-containers">
+
+                <div class="fieldset-banner">
+                    <div class ="fieldset-legend">
+                        <legend for="name">Name:</legend>
+                    </div>
+                    <div class="input-container">
+                        <input name="name" type="text" id="name" pattern="[A-Za-z]{1,20}" placeholder="Your Name">
+                        <button type="submit" id="submit-button-name">Submit</button>
+                    </div>
+
+                </div>
+            </fieldset>
+            <br><br>
+            <fieldset class="fieldset-containers">
+
+                <div class="fieldset-banner">
+                    <div class ="fieldset-legend">
+                        <legend for="name">Last Name:</legend>
+                    </div>
+                    <div class="input-container">
+                        <input name="lastname" type="text" id="lastname" pattern="[A-Za-z]{1,20}" placeholder="Your last name">
+                        <button type="submit" id="submit-button-lastname">Submit</button>
+                    </div>
+
+                </div>
+            </fieldset>
+            <br><br>
+            <fieldset class="fieldset-containers">
+
+                <div class="fieldset-banner">
+                    <div class ="fieldset-legend">
+                        <legend for="name">Username:</legend>
+                    </div>
+                    <div class="input-container">
+                        <input name="username" type="text" id="username" pattern="[A-Za-z]{1,20}" placeholder="Your username">
+                        <button type="submit" id="submit-button-username">Submit</button>
+                    </div>
+
+                </div>
+            </fieldset>
+            
+        </form>
+        <!--imported footer-->
+        <app-footer></app-footer>
+    </body>
+</html>

@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>report</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Incident</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/report.css" />
+    <script type="module" src="/src/components/components.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <app-navbar></app-navbar>
+
+    <!-- Main container -->
+    <div class="container main-container">
+      <h1 id="welcomeBox">Submit a Report</h1>
+
+      <!-- Report Form as a card -->
+      <div class="report-card">
+        <form id="reportForm">
+          <label for="type">Type:</label>
+          <select id="type" required>
+            <option value="accident">Accident</option>
+            <option value="traffic">Traffic</option>
+            <option value="roadblock">Roadblock</option>
+          </select>
+
+          <label for="comment">Comment:</label>
+          <textarea
+            id="comment"
+            placeholder="Describe the issue..."
+            required
+          ></textarea>
+
+          <button type="submit" class="report-btn">Submit Report</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+
+    <script type="module" src="/src/js/report.js"></script>
+  </body>
 </html>

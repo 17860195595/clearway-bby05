@@ -134,7 +134,7 @@ export class AppFooter extends HTMLElement {
     } else if (route === 'traffic') {
       window.location.href = getPagesPath('trafficComments.html');
     } else if (route === 'settings') {
-      console.log('Settings page not implemented yet');
+      window.location.href = getPagesPath('settings.html');
     }
   }
 }

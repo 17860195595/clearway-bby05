@@ -2,12 +2,11 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-// Add SDKs for Firebase products as needed:
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getStorage } from "firebase/storage";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBgobrW_SzqAVxxQI-GP-xibMJUz4Znz3E", // Replace with your API key (prefer env)
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBgobrW_SzqAVxxQI-GP-xibMJUz4Znz3E",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "bby05project.firebaseapp.com",
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "bby05project",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "bby05project.appspot.com",
@@ -16,9 +15,10 @@ const firebaseConfig = {
   databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL || "https://bby05project-default-rtdb.firebaseio.com/"
 };
 
+// Debug: show Firebase config but hide most of API key
 console.log('Firebase config:', {
   ...firebaseConfig,
-  apiKey: firebaseConfig.apiKey.substring(0, 10) + '...' // show only first 10 chars for debugging
+  apiKey: firebaseConfig.apiKey.substring(0, 10) + '...' 
 });
 
 // Initialize Firebase
@@ -34,4 +34,8 @@ try {
   console.error('Failed to initialize Firebase Firestore:', error);
   db = null;
 }
+
+// Export storage too
+export const storage = getStorage(app);
+
 export { db };
